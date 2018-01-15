@@ -1,0 +1,29 @@
+{
+  "name": "gatsby",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "gatsby": "latest",
+    "gatsby-plugin-styled-components": "^2.0.4",
+    "gatsby-plugin-typography": "^1.7.10",
+    "jss": "latest",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-flexbox-grid": "^2.0.0",
+    "react-icons": "^2.2.7",
+    "react-jss": "latest",
+    "react-masonry-css": "^1.0.10",
+    "react-particles-js": "^2.1.0",
+    "react-typist": "^2.0.4",
+    "styled-components": "^2.4.0",
+    "typography": "^0.16.6",
+    "typography-theme-irving": "^0.15.10"
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  }
+}
