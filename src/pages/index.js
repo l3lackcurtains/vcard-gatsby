@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import GlobalStyle from '../utils/GlobalStyle'
 import Header from '../components/Header'
 import Intro from '../components/Intro'
 import Skills from '../components/Skills'
@@ -23,12 +24,14 @@ class Index extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Header />
-        <Intro />
-        <Skills />
-        <Portfolio />
-        <Experiences />
-        <Educations />
+        <GlobalStyle>
+          <Header />
+          <Intro />
+          <Skills />
+          <Portfolio />
+          <Experiences />
+          <Educations />
+        </GlobalStyle>
       </div>
     );
   }
