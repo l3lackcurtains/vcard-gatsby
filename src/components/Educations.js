@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import FaBook from 'react-icons/lib/fa/book'
 import 'react-vertical-timeline-component/style.min.css'
 import ReactHtmlParser from 'react-html-parser'
+import Title from './Title'
 
 const EducationsWrapper = styled.div`
 
@@ -18,7 +19,7 @@ class Educations extends Component {
                 <Row>
                     <Col xs={12} md={10} mdOffset={1}>
                         <EducationsWrapper>
-                            <h1>Education History</h1>
+                            <Title>Education History</Title>
                             <VerticalTimeline>
                                 {
                                     educationsList.map((e,i) => 

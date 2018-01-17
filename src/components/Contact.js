@@ -3,9 +3,33 @@ import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import Paper from 'material-ui/Paper'
 import TextField from 'material-ui/TextField'
-import { StaticMap } from 'react-map-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
-import 'mapbox-gl/dist/mapbox-gl.js'
+import Title from './Title'
+import GoogleMapReact from 'google-map-react'
+import FaMapMarker from 'react-icons/lib/fa/map-marker'
+
+const MapElement = ({ text }) => <div style={{ fontSize: 50, color: '#2C3E50' }}>{text}</div>
+
+class SimpleMap extends Component {
+    static defaultProps = {
+      center: {lat: 59.95, lng: 30.33},
+      zoom: 11
+    }
+  
+    render() {
+      return (
+        <GoogleMapReact
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+          <MapElement
+            lat={59.955413}
+            lng={30.337844}
+            text={<FaMapMarker />}
+          />
+        </GoogleMapReact>
+      )
+    }
+  }
 
 const ContactInfo = styled(Paper)`
     && {
@@ -18,7 +42,12 @@ const ContactInfo = styled(Paper)`
 
 const MapInfo = styled(Paper)`
     && {
-
+        position: relative;
+        overflow: hidden;
+        height: 383px;
+        @media only screen and (max-width: 1170px) { 
+            height: 413px;
+        }
     }
 `
 
@@ -44,7 +73,7 @@ class Contact extends Component {
             <Grid>
                 <Row>
                     <Col xs={12} md={10} mdOffset={1}>
-                        <h1>Stay Connected with me</h1>
+                        <Title>Stay Connected with me</Title>
                         <Row>
                             <Col xs={12} md={6}>
                                 <ContactInfo>
@@ -78,14 +107,7 @@ class Contact extends Component {
                             </Col>
                             <Col xs={12} md={6}>
                                 <MapInfo>
-                                    <StaticMap
-                                        mapboxApiAccessToken="pk.eyJ1IjoibDNsYWNrY3VydGFpbnMiLCJhIjoiY2pjaDZhcXBxMXh6NzJ3bzJtZWZlNzRtcCJ9.K-JY-zJh3jIOIest3n_iBg"
-                                        height={380}
-                                        latitude={37.7577}
-                                        longitude={-122.4376}
-                                        zoom={8}
-                                        mapStyle="mapbox://styles/l3lackcurtains/cjcikxw0m8b9g2rqyb08ukooy"
-                                    />
+                                    <SimpleMap />
                                 </MapInfo>
                             </Col>
                         </Row>

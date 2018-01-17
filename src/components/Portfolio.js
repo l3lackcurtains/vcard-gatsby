@@ -6,6 +6,7 @@ import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 import MdLink from 'react-icons/lib/md/link'
 import MdKeyboardControl from 'react-icons/lib/md/keyboard-control'
+import Title from './Title'
 
 const breakpointColumnsObj = {
     default: 2,
@@ -43,7 +44,6 @@ const MetaButton = styled.a`
     padding: 8px;
 `
 const PortfolioDesc = styled.div`
-    color: #fff;
     position: absolute;
     bottom: 0px;
     transform: translate(0px, 200px);
@@ -51,6 +51,9 @@ const PortfolioDesc = styled.div`
     width: 100%;
     text-align: center;
     transition: all 600ms ease-in;
+    h2 {
+        color: #fff;
+    }
     ul {
         padding: 0;
         margin: 0;
@@ -117,7 +120,7 @@ class Portfolio extends Component {
                 <Row>
                     <Col xs={12} md={10} mdOffset={1}>
                         <PortfolioWrapper>
-                            <h1>Portfolio</h1>
+                            <Title>Portfolio</Title>
                             <PortfolioGrid>
                                 <MasonryGrid
                                     breakpointCols={breakpointColumnsObj}

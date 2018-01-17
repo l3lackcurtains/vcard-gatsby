@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import MdWork from 'react-icons/lib/md/work'
 import 'react-vertical-timeline-component/style.min.css'
 import ReactHtmlParser from 'react-html-parser'
+import Title from './Title'
 
 const ExperiencesWrapper = styled.div`
 
@@ -18,7 +19,7 @@ class Experiences extends Component {
                 <Row>
                     <Col xs={12} md={10} mdOffset={1}>
                         <ExperiencesWrapper>
-                            <h1>Work Experiences</h1>
+                            <Title>Work Experiences</Title>
                             {
                                 experiencesList.map((e, i) =>
                                     <VerticalTimeline>

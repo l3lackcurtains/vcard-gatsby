@@ -79,6 +79,9 @@ const MenuBar = styled.ul`
         cursor: pointer;
         a {
             text-decoration: none;
+            &.active {
+                color: #E74C3C;
+            }
         }
     }
     @media only screen and (max-width: 1170px) { 
@@ -89,6 +92,7 @@ const MenuBar = styled.ul`
 class Header extends Component {
     state = {
         sticky: false,
+        activeArea: '',
     }
     componentDidMount = () => {
         window.addEventListener('scroll', () => {
@@ -97,18 +101,19 @@ class Header extends Component {
                 this.setState({
                     sticky: true
                 })
-                console.log('hi scrolling', position)
             } else {
                 this.setState({
-                    sticky: false
+                    sticky: false,
+                    activeArea: '',
                 })
-                console.log('low scrolling', position)
             }
             
         })
     }
     handleSetActive = to => {
-        console.log(to)
+        this.setState({
+            activeArea: to
+        })
     }
     render() {
         return (
@@ -122,32 +127,36 @@ class Header extends Component {
                                         <MenuHammerIcon aria-label="Menu">
                                             <MenuIcon />
                                         </MenuHammerIcon>
-                                        <h5>Madhav Poudel</h5>
+                                        <h5><a href="/">Madhav Poudel</a></h5>
                                     </Logo>
                                     <MenuBar>
-                                        <li><a href="">Home</a></li>
                                         <li>
-                                            <Link to="skills" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                            <Link className={this.state.activeArea === 'intro' ? 'active' : ''} to="intro" spy={true} smooth={true} offset={105} duration={500} onSetActive={this.handleSetActive}>
+                                                Intro
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link className={this.state.activeArea === 'skills' ? 'active' : ''} to="skills" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
                                                 Skills
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="portfolio" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                            <Link className={this.state.activeArea === 'portfolio' ? 'active' : ''} to="portfolio" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
                                                 Portfolio
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="experiences" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                            <Link className={this.state.activeArea === 'experiences' ? 'active' : ''} to="experiences" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
                                                 Experiences
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="educations" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                            <Link className={this.state.activeArea === 'educations' ? 'active' : ''} to="educations" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
                                                 Educations
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="contact" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                            <Link className={this.state.activeArea === 'contact' ? 'active' : ''} to="contact" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
                                                 Contact
                                             </Link>
                                         </li>

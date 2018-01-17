@@ -8,6 +8,7 @@
     "gatsby-plugin-typography": "^1.7.10",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
+    "google-map-react": "^0.27.0",
     "jss": "latest",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.17",
@@ -18,7 +19,6 @@
     "react-html-parser": "^2.0.2",
     "react-icons": "^2.2.7",
     "react-jss": "latest",
-    "react-map-gl": "^3.2.0",
     "react-masonry-css": "^1.0.10",
     "react-particles-js": "^2.1.0",
     "react-scroll": "^1.7.6",
@@ -35,6 +35,8 @@
   },
   "scripts": {
     "develop": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "heroku-postbuild": "gatsby build",
+    "start": "gatsby serve"
   }
 }

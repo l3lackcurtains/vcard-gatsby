@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import Paper from 'material-ui/Paper';
 import { LinearProgress } from 'material-ui/Progress';
+import Title from './Title'
 
 const SkillsWrapper = styled.div`
     text-align: left;
@@ -42,7 +43,7 @@ class Skills extends Component {
                 <Row>
                     <Col xs={12} md={10} mdOffset={1}>
                         <SkillsWrapper>
-                            <h1>Professional Skills</h1>
+                            <Title>Professional Skills</Title>
                             <ProfessionalSkills>
                                 <Row>
                                     {
