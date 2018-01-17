@@ -9,6 +9,7 @@ import FaMedium from 'react-icons/lib/fa/medium'
 import FaInstagram from 'react-icons/lib/fa/instagram'
 import IconButton from 'material-ui/IconButton';
 import Paper from 'material-ui/Paper'
+import ReactHtmlParser from 'react-html-parser'
 
 const IntroWrapper = styled(Paper) `
     && {
@@ -102,6 +103,9 @@ const AboutMe = styled.div`
 
 class Intro extends Component {
     render() {
+        const { about, social } = this.props
+        const ab = about.edges[0]
+        const sc = social.edges[0]
         return(
             <div>
                 <Grid>
@@ -142,13 +146,13 @@ class Intro extends Component {
                                         </SocialIcons>
                                     </Col>
                                     <Col xs={12} md={8}>
-                                        <Name>Madhav Poudel</Name>
-                                        <Prof>Full stack web developer</Prof>
+                                        <Name>{ab.node.frontmatter.name}</Name>
+                                        <Prof>{ab.node.frontmatter.role}</Prof>
                                         <Introduce>
-                                            <li><strong>Age: </strong><p>23</p></li>
-                                            <li><strong>Address: </strong><p>Pokhara, Nepal</p></li>
-                                            <li><strong>Email: </strong><p>l3lackcurtains@gmail.com</p></li>
-                                            <li><strong>Freelance: </strong><p>Available</p></li>
+                                            <li><strong>Age: </strong><p>{ab.node.frontmatter.age}</p></li>
+                                            <li><strong>Address: </strong><p>{ab.node.frontmatter.address}</p></li>
+                                            <li><strong>Email: </strong><p>{ab.node.frontmatter.email}</p></li>
+                                            <li><strong>Freelance: </strong><p>{ab.node.frontmatter.freelance}</p></li>
                                         </Introduce>
                                         <Actions>
                                             <li>
@@ -172,7 +176,7 @@ class Intro extends Component {
                     <Row>
                         <Col xs={12} md={10} mdOffset={1}>
                             <AboutMe>
-                                <p>Hello! I’m Madhav Poudel. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.</p>
+                                {ReactHtmlParser(ab.node.html)}
                             </AboutMe>
                         </Col>
                     </Row>

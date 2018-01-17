@@ -125,7 +125,7 @@ class Portfolio extends Component {
                                 >
                                     {
                                         portfolioList.map((p, i) => 
-                                            <PortfolioItem id={p.node.frontmatter.name}>
+                                            <PortfolioItem key={p.node.frontmatter.name}>
                                                 <span />
                                                 <PortfolioDesc>
                                                     <h2>{p.node.frontmatter.name}</h2>

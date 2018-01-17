@@ -23,7 +23,7 @@ class Experiences extends Component {
                                 experiencesList.map((e, i) =>
                                     <VerticalTimeline>
                                         <VerticalTimelineElement
-                                            id={e.node.frontmatter.name}
+                                            key={e.node.frontmatter.name}
                                             className="vertical-timeline-element--work"
                                             date={e.node.frontmatter.duration}
                                             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}

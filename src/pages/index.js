@@ -29,7 +29,7 @@ class Index extends React.Component {
       <div className={classes.root}>
         <GlobalStyle>
           <Header />
-          <Intro />
+          <Intro about={this.props.data.about} social={this.props.data.social} />
           <Skills skills={this.props.data.skills} />
           <Portfolio portfolio={this.props.data.portfolio} />
           <Experiences experiences={this.props.data.experiences} />
@@ -91,6 +91,37 @@ export const skillsQuery = graphql`
             role
           }
           html
+        }
+      }
+    }
+    about: allMarkdownRemark(filter: { frontmatter: { title: { eq: "about"}}}){
+      totalCount
+      edges {
+        node {
+          frontmatter{
+            name
+            role
+            age
+            address
+            email
+            freelance
+            cv
+          }
+          html
+        }
+      }
+    }
+    social: allMarkdownRemark(filter: { frontmatter: { title: { eq: "social"}}}){
+      totalCount
+      edges {
+        node {
+          frontmatter{
+            facebook
+            twitter
+            instagram
+            github
+            medium
+          }
         }
       }
     }
