@@ -28,7 +28,7 @@ const MasonryGrid = styled(Masonry)`
         margin: 0;
         padding: 0;
         .grid_column {
-            border-right: 24px solid transparent;
+            border-right: 16px solid transparent;
             background-clip: padding-box;
             &:nth-child(even) {
                 border-right: 0;
@@ -66,7 +66,7 @@ const PortfolioDesc = styled.div`
 const PortfolioItem = styled(Paper)`
 && {
     background: #fff;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     transition: all 300ms ease-in;
     img {
         width: 100%;
@@ -110,6 +110,8 @@ const MoreButton = styled(Button)`
 
 class Portfolio extends Component {
     render() {
+        const { portfolio } = this.props
+        const portfolioList = portfolio.edges
         return(
             <Grid>
                 <Row>
@@ -121,82 +123,29 @@ class Portfolio extends Component {
                                     breakpointCols={breakpointColumnsObj}
                                     columnClassName="grid_column"
                                 >
-                                    <PortfolioItem>
-                                        <span />
-                                        <PortfolioDesc>
-                                            <h2>Forest Nation</h2>
-                                            <ul>
-                                                <li>
-                                                    <MetaButton aria-label="More">
-                                                        <MdKeyboardControl />
-                                                    </MetaButton>
-                                                </li>
-                                                <li>
-                                                    <MetaButton aria-label="Link">
-                                                        <MdLink />
-                                                    </MetaButton>
-                                                </li>
-                                            </ul>
-                                        </PortfolioDesc>
-                                        <img src="https://madhavpoudel.com.np/wp-content/uploads/2017/02/forestnation-600x450.jpg" />
-                                    </PortfolioItem>
-                                    <PortfolioItem>
-                                        <span />
-                                        <PortfolioDesc>
-                                            <h2>Agronization</h2>
-                                            <ul>
-                                                <li>
-                                                    <MetaButton aria-label="More">
-                                                        <MdKeyboardControl />
-                                                    </MetaButton>
-                                                </li>
-                                                <li>
-                                                    <MetaButton aria-label="Link">
-                                                        <MdLink />
-                                                    </MetaButton>
-                                                </li>
-                                            </ul>
-                                        </PortfolioDesc>
-                                        <img src="https://madhavpoudel.com.np/wp-content/uploads/2017/02/agronization-600x450.jpg" />
-                                    </PortfolioItem>
-                                    <PortfolioItem>
-                                        <span />
-                                        <PortfolioDesc>
-                                            <h2>Tech News PWA</h2>
-                                            <ul>
-                                                <li>
-                                                    <MetaButton aria-label="More">
-                                                        <MdKeyboardControl />
-                                                    </MetaButton>
-                                                </li>
-                                                <li>
-                                                    <MetaButton aria-label="Link">
-                                                        <MdLink />
-                                                    </MetaButton>
-                                                </li>
-                                            </ul>
-                                        </PortfolioDesc>
-                                        <img src="https://madhavpoudel.com.np/wp-content/uploads/2017/02/FireShot-Capture-5-Tech-News-https___tnpwa.herokuapp.com_-600x432.png" />
-                                    </PortfolioItem>
-                                    <PortfolioItem>
-                                        <span />
-                                        <PortfolioDesc>
-                                            <h2>Forest Nation</h2>
-                                            <ul>
-                                                <li>
-                                                    <MetaButton aria-label="More">
-                                                        <MdKeyboardControl />
-                                                    </MetaButton>
-                                                </li>
-                                                <li>
-                                                    <MetaButton aria-label="Link">
-                                                        <MdLink />
-                                                    </MetaButton>
-                                                </li>
-                                            </ul>
-                                        </PortfolioDesc>
-                                        <img src="https://madhavpoudel.com.np/wp-content/uploads/2017/02/forestnation-600x450.jpg" />
-                                    </PortfolioItem>
+                                    {
+                                        portfolioList.map((p, i) => 
+                                            <PortfolioItem id={p.node.frontmatter.name}>
+                                                <span />
+                                                <PortfolioDesc>
+                                                    <h2>{p.node.frontmatter.name}</h2>
+                                                    <ul>
+                                                        <li>
+                                                            <MetaButton aria-label="More">
+                                                                <MdKeyboardControl />
+                                                            </MetaButton>
+                                                        </li>
+                                                        <li>
+                                                            <MetaButton aria-label="Link">
+                                                                <MdLink />
+                                                            </MetaButton>
+                                                        </li>
+                                                    </ul>
+                                                </PortfolioDesc>
+                                                <img src={p.node.frontmatter.image} />
+                                            </PortfolioItem>
+                                        )
+                                    }
                                 </MasonryGrid>
                                 <MoreButton>See More Projects</MoreButton>
                             </PortfolioGrid>
