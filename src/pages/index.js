@@ -10,6 +10,7 @@ import Experiences from '../components/Experiences'
 import Educations from '../components/Educations'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import withRoot from '../withRoot';
 
@@ -29,12 +30,24 @@ class Index extends React.Component {
       <div className={classes.root}>
         <GlobalStyle>
           <Header />
-          <Intro about={this.props.data.about} social={this.props.data.social} />
-          <Skills skills={this.props.data.skills} />
-          <Portfolio portfolio={this.props.data.portfolio} />
-          <Experiences experiences={this.props.data.experiences} />
-          <Educations educations={this.props.data.educations} />
-          <Contact />
+          <Element name="intro">
+            <Intro about={this.props.data.about} social={this.props.data.social} />
+          </Element>
+          <Element name="skills">
+            <Skills skills={this.props.data.skills} />
+          </Element>
+          <Element name="portfolio">
+            <Portfolio portfolio={this.props.data.portfolio} />
+          </Element>
+          <Element name="experiences">
+            <Experiences experiences={this.props.data.experiences} />
+          </Element>
+          <Element name="educations">
+            <Educations educations={this.props.data.educations} />
+          </Element>
+          <Element name="contact">
+            <Contact />
+          </Element>
           <Footer />
         </GlobalStyle>
       </div>

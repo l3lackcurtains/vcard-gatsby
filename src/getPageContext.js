@@ -2,16 +2,18 @@
 
 import { SheetsRegistry } from 'jss';
 import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
-import purple from 'material-ui/colors/purple';
-import green from 'material-ui/colors/green';
+import { blueGrey, green } from 'material-ui/colors';
 
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
   palette: {
-    primary: purple,
+    primary: blueGrey,
     secondary: green,
   },
+  typography: {
+    fontFamily: "'PT Sans',sans-serif"
+  }
 });
 
 function createPageContext() {

@@ -14,7 +14,7 @@ const breakpointColumnsObj = {
     500: 1
   }
 const PortfolioWrapper = styled.div`
-    text-align: left;
+    margin: 40px 0;
 `
 
 const PortfolioGrid = styled.div`

@@ -6,7 +6,7 @@ import { LinearProgress } from 'material-ui/Progress';
 
 const SkillsWrapper = styled.div`
     text-align: left;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 `
 
 const ProfessionalSkills = styled(Paper) `
@@ -21,13 +21,14 @@ const Skill = styled.div`
     position: relative;
     p {
         margin-bottom: 8px;
+        color: #E74C3C;
     }
     span {
         position: absolute;
         top: 0;
         right: 0;
         padding: 8px;
-        color: #1A237E;
+        color: #2980B9;
     }
 `
 

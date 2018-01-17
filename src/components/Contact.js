@@ -80,7 +80,6 @@ class Contact extends Component {
                                 <MapInfo>
                                     <StaticMap
                                         mapboxApiAccessToken="pk.eyJ1IjoibDNsYWNrY3VydGFpbnMiLCJhIjoiY2pjaDZhcXBxMXh6NzJ3bzJtZWZlNzRtcCJ9.K-JY-zJh3jIOIest3n_iBg"
-                                        width={500}
                                         height={380}
                                         latitude={37.7577}
                                         longitude={-122.4376}

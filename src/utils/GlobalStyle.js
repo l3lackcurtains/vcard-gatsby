@@ -1,14 +1,25 @@
 import styled from 'styled-components'
 
 const GlobalStyle = styled.div`
-    background: #f3f3f3;
+    font-size: 0.95em;
+    background: #ECF0F1;
+    a {
+        text-shadow: none !important;
+        background: none;
+    }
     /* Timeline */
     .vertical-timeline{
         width: 100%;
+        .vertical-timeline-element-subtitle {
+            color: #3498DB;
+        }
     }
     @media only screen and (min-width: 1170px) {
         .vertical-timeline-element {
             margin: 4px 0;
+            p {
+                font-size: 0.95em;
+            }
         }
         .vertical-timeline-element-content .vertical-timeline-element-date {
             position: absolute;

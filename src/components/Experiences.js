@@ -26,7 +26,7 @@ class Experiences extends Component {
                                             key={e.node.frontmatter.name}
                                             className="vertical-timeline-element--work"
                                             date={e.node.frontmatter.duration}
-                                            iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                            iconStyle={{ background: '#E74C3C', color: '#fff' }}
                                             icon={<MdWork />}
                                         >
                                             <h3 className="vertical-timeline-element-title">{e.node.frontmatter.role}</h3>

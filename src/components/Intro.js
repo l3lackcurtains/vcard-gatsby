@@ -86,18 +86,25 @@ const CVButton = styled(Button) `
     && {
         background: #fff;
         font-size: 16px;
+        &:hover {
+            background: #fff;
+        }
     }
 `
 
 const ContactButton = styled(Button) `
     && {
-        background: #1A237E;
+        background: #E74C3C;
         font-size: 16px;
         color: #fff;
+        &:hover {
+            background: #E74C3C;
+        }
     }
 `
 const AboutMe = styled.div`
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 20px;
     text-align: left;
 `
 

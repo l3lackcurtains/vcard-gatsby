@@ -26,7 +26,7 @@ class Educations extends Component {
                                             key={e.node.frontmatter.name}
                                             className="vertical-timeline-element--work"
                                             date={e.node.frontmatter.duration}
-                                            iconStyle={{ background: 'rgb(12, 120, 143)', color: '#fff' }}
+                                            iconStyle={{ background: '#E74C3C', color: '#fff' }}
                                             icon={<FaBook />}
                                         >
                                             <h3 className="vertical-timeline-element-title">{e.node.frontmatter.degree}</h3>
