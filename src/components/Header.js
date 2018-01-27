@@ -10,7 +10,47 @@ import FaInstagram from 'react-icons/lib/fa/instagram'
 import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import Paper from 'material-ui/Paper'
+import Drawer from 'material-ui/Drawer'
+import List, { ListItem, ListItemText } from 'material-ui/List'
 import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+const menuItems = [
+    {
+        name: 'Intro',
+        slug: 'intro',
+        link: null,
+    },
+    {
+        name: 'Skills',
+        slug: 'skills',
+        link: null,
+    },
+    {
+        name: 'Portfolio',
+        slug: 'portfolio',
+        link: null,
+    },
+    {
+        name: 'Experiences',
+        slug: 'experiences',
+        link: null,
+    },
+    {
+        name: 'Educations',
+        slug: 'educations',
+        link: null,
+    },
+    {
+        name: 'Contact',
+        slug: 'contact',
+        link: null,
+    },
+    {
+        name: 'Blog',
+        slug: 'blog',
+        link: '/blog',
+    },
+]
 
 const HeaderWrapper = styled.div`
     background: #2C3E50;
@@ -23,7 +63,7 @@ const MenuWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 99999;
+    z-index: 888;
 `
 
 const NavBar = styled(Paper)`
@@ -89,11 +129,35 @@ const MenuBar = styled.ul`
     }
 `
 
+const MobileMenu = styled.div`
+    width: 150px;
+    padding: 48px 0;
+    z-index: 9999;
+    li {
+        padding: 8px 16px;
+        a {
+            background: none;
+            text-decoration: none;
+            text-shadow: none;
+            &.active {
+                color: #E74C3C;
+            }
+        }
+    }
+`
+
 class Header extends Component {
     state = {
         sticky: false,
         activeArea: '',
+        left: true,
     }
+
+    toggleDrawer = (side, open) => () => {
+        this.setState({
+          [side]: open,
+        })
+      }
     componentDidMount = () => {
         window.addEventListener('scroll', () => {
             const position = window.scrollY
@@ -117,57 +181,60 @@ class Header extends Component {
     }
     render() {
         return (
-            <HeaderWrapper>
-                <MenuWrapper>
-                    <Grid>
-                        <Row>
-                            <Col xs={12} md={10} mdOffset={1}>
-                                <NavBar className={this.state.sticky ? 'sticky' : ''}>
-                                    <Logo>
-                                        <MenuHammerIcon aria-label="Menu">
-                                            <MenuIcon />
-                                        </MenuHammerIcon>
-                                        <h5><a href="/">Madhav Poudel</a></h5>
-                                    </Logo>
-                                    <MenuBar>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'intro' ? 'active' : ''} to="intro" spy={true} smooth={true} offset={105} duration={500} onSetActive={this.handleSetActive}>
-                                                Intro
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'skills' ? 'active' : ''} to="skills" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-                                                Skills
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'portfolio' ? 'active' : ''} to="portfolio" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-                                                Portfolio
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'experiences' ? 'active' : ''} to="experiences" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-                                                Experiences
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'educations' ? 'active' : ''} to="educations" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-                                                Educations
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link className={this.state.activeArea === 'contact' ? 'active' : ''} to="contact" spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
-                                                Contact
-                                            </Link>
-                                        </li>
-                                        <li><a href="">Blog</a></li>
-                                    </MenuBar>
-                                </NavBar>
-                            </Col>
-                        </Row>
-                    </Grid>
-                </MenuWrapper>
-            </HeaderWrapper>
+            <div>
+                <HeaderWrapper>
+                    <MenuWrapper>
+                        <Grid>
+                            <Row>
+                                <Col xs={12} md={10} mdOffset={1}>
+                                    <NavBar className={this.state.sticky ? 'sticky' : ''}>
+                                        <Logo>
+                                            <MenuHammerIcon aria-label="Menu" onClick={this.toggleDrawer('left', true)}>
+                                                <MenuIcon />
+                                            </MenuHammerIcon>
+                                            <h5><a href="/">Madhav Poudel</a></h5>
+                                        </Logo>
+                                        <MenuBar>
+                                            {
+                                            menuItems.map((m, i) => (
+                                                <li>
+                                                    {
+                                                        !m.link ? 
+                                                        <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                                            {m.name}
+                                                        </Link> : <a href="">{m.name}</a>
+                                                    }
+                                                    
+                                                </li>
+                                            ))  
+                                            }
+                                        </MenuBar>
+                                    </NavBar>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </MenuWrapper>
+                </HeaderWrapper>
+                <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+                    <MobileMenu>
+                        <List>
+                            {
+                                menuItems.map((m, i) => (
+                                    <ListItem button>
+                                        {
+                                            !m.link ? 
+                                                <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                                    {m.name}
+                                                </Link> : <a href="">{m.name}</a>
+                                        }
+                                    </ListItem>
+                                ))
+                            }
+                            
+                        </List>
+                    </MobileMenu>
+                </Drawer>
+            </div>
         )
     }
 }
