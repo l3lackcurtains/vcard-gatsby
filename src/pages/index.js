@@ -1,5 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import Helmet from 'react-helmet'
+import get from 'lodash/get'
+
 import { withStyles } from 'material-ui/styles';
 import GlobalStyle from '../utils/GlobalStyle'
 import Header from '../components/Header'
@@ -10,9 +14,8 @@ import Experiences from '../components/Experiences'
 import Educations from '../components/Educations'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import { Link, DirectLink, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-import withRoot from '../withRoot';
+import withRoot from '../withRoot'
 
 const styles = theme => ({
   root: {
@@ -24,10 +27,24 @@ class Index extends React.Component {
 
   render() {
     const { classes } = this.props
-    console.log(this.props.data)
-
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     return (
       <div className={classes.root}>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>{siteTitle}</title>
+            <meta name="description" content="Full Stack Web Developer based in Pokhara." />
+            <style>{
+              `
+                body {
+                  margin: 0 !important;
+                  padding: 0 !important;
+                }
+              `
+              }
+              
+            </style>
+        </Helmet>
         <GlobalStyle>
           <Header />
           <Element name="intro">
@@ -59,6 +76,11 @@ export default withRoot(withStyles(styles)(Index))
 
 export const skillsQuery = graphql`
   query IndexQuery {
+    site: site {
+      siteMetadata {
+        title
+      }
+    }
     skills: allMarkdownRemark(filter: { frontmatter: { title: { eq: "skills"}}}){
       totalCount
       edges {

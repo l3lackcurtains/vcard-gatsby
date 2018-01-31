@@ -150,7 +150,7 @@ class Header extends Component {
     state = {
         sticky: false,
         activeArea: '',
-        left: true,
+        left: false,
     }
 
     toggleDrawer = (side, open) => () => {

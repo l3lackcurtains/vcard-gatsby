@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Madhav Poudel - Vcard',
+    author: 'Madhav Poudel'
   },
   plugins: [
     {
@@ -18,5 +19,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`
   ],
 };
