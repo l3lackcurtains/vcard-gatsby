@@ -19,41 +19,48 @@ const menuItems = [
         name: 'Intro',
         slug: 'intro',
         link: null,
+        offset: 150,
     },
     {
         name: 'Skills',
         slug: 'skills',
         link: null,
+        offset: -100,
     },
     {
         name: 'Portfolio',
         slug: 'portfolio',
         link: null,
+        offset: -100,
     },
     {
         name: 'Experiences',
         slug: 'experiences',
         link: null,
+        offset: -100,
     },
     {
         name: 'Educations',
         slug: 'educations',
         link: null,
+        offset: -100,
     },
     {
         name: 'Contact',
         slug: 'contact',
         link: null,
+        offset: -100,
     },
     {
         name: 'Blog',
         slug: 'blog',
         link: '/blog',
+        offset: null
     },
 ]
 
 const HeaderWrapper = styled.div`
-    background: #2C3E50;
+    background: linear-gradient(to top, #263238, #2C3E50);
     height: 500px;
     width: 100%;
 `
@@ -200,7 +207,7 @@ class Header extends Component {
                                                 <li>
                                                     {
                                                         !m.link ? 
-                                                        <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                                        <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={m.offset} duration={500} onSetActive={this.handleSetActive}>
                                                             {m.name}
                                                         </Link> : <a href="">{m.name}</a>
                                                     }
@@ -223,7 +230,7 @@ class Header extends Component {
                                     <ListItem button>
                                         {
                                             !m.link ? 
-                                                <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={-100} duration={500} onSetActive={this.handleSetActive}>
+                                                <Link className={this.state.activeArea === m.slug ? 'active' : ''} to={m.slug} spy={true} smooth={true} offset={m.offset} duration={500} onSetActive={this.handleSetActive}>
                                                     {m.name}
                                                 </Link> : <a href="">{m.name}</a>
                                         }
