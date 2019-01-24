@@ -9,6 +9,13 @@ A personal vCard Template built for fun.. ;)
   yarn start
   ```
 
+<b>To develop from template:</b>
+
+  ```bash
+  yarn
+  yarn develop
+  ```
+
 ## Screenshot
 
 ![Screenshot](./resources/screenshot.png)
