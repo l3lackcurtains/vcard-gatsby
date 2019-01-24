@@ -1,5 +1,7 @@
-# VCard Gatsby Personal Website
+# VCard Personal Template
 A personal vCard Template built for fun.. ;)
+
+Built with gatsby, react, styled Component...
 
 <b>To Install and run the website:</b>
 
