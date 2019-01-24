@@ -1,5 +1,5 @@
 ---
 title: "skills"
-name: "ReactJS"
+name: "Web Design"
 amount: 75
 ---

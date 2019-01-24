@@ -1,18 +1,18 @@
 /* eslint-disable no-underscore-dangle */
 
-import { SheetsRegistry } from 'jss';
-import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
-import { blueGrey, green } from 'material-ui/colors';
+import { SheetsRegistry } from "jss";
+import { createMuiTheme, createGenerateClassName } from "material-ui/styles";
+import { blueGrey, green } from "material-ui/colors";
 
 // A theme with custom primary and secondary color.
 // It's optional.
 const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
-    secondary: green,
+    secondary: green
   },
   typography: {
-    fontFamily: "'PT Sans',sans-serif"
+    fontFamily: "'Open Sans', sans-serif"
   }
 });
 
@@ -24,7 +24,7 @@ function createPageContext() {
     // This is needed in order to inject the critical CSS.
     sheetsRegistry: new SheetsRegistry(),
     // The standard class name generator.
-    generateClassName: createGenerateClassName(),
+    generateClassName: createGenerateClassName()
   };
 }
 

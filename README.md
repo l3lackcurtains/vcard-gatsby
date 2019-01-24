@@ -1,11 +1,15 @@
 # VCard Gatsby Personal Website
+A personal vCard Template built for fun.. ;)
 
-Being implemented on my [Personal VCard](http://madhavpoudel.com.np) website
-
-- To Install and run follow the commands:
+<b>To Install and run follow the commands:</b>
 
   ```bash
   yarn
   yarn build
   yarn start
   ```
+
+## Screenshot
+
+![Screenshot](./resources/screenshot.png)
+

@@ -8518,6 +8518,11 @@ typography-breakpoint-constants@^0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz#bd5308dd57250e7f28a8c6e1c0e668ddf1178c5c"
 
+typography-breakpoint-constants@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.16.18.tgz#5b1e24a31879662ca0456828b8f8f8158cd2b436"
+  integrity sha512-9V3cyN4Lh9SUecjirf6F0+bNvIpI0aLx8qXBzErDRdDizPXOojjdSudFr3kv5wx0qseVzUiFkm8LNXvKGOrZKQ==
+
 typography-normalize@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
@@ -8529,6 +8534,15 @@ typography-theme-alton@^0.15.10:
     compass-vertical-rhythm "^1.2.1"
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
+
+typography-theme-de-young@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-theme-de-young/-/typography-theme-de-young-0.16.18.tgz#2015cec87334ed601944112dba22f43cec3a8bc9"
+  integrity sha512-fjZMK3pbnDQzZmhZ38e5Zn7erVrBMzVevidANel2nuezixJrYHBCtIHkN0GSdDpTn+BCyF8cNKm14hoagL9cOQ==
+  dependencies:
+    compass-vertical-rhythm "^1.2.1"
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.18"
 
 typography-theme-elk-glen@^0.16.9:
   version "0.16.9"
@@ -8552,6 +8566,22 @@ typography-theme-irving@^0.15.10:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
 
+typography-theme-lincoln@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-theme-lincoln/-/typography-theme-lincoln-0.16.18.tgz#285dea5930d91093f33ef24263d90507900deae5"
+  integrity sha512-jDxqf5uL0uyucV8VIyYyB0zQZ0Z5xBhLNECbE/20IfwpxeCF3/9qd34b0b2v1v9ghm+H3iZkzLoJPm+lepbOGQ==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.18"
+
+typography-theme-ocean-beach@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-theme-ocean-beach/-/typography-theme-ocean-beach-0.16.18.tgz#e29752433b79c5350d66bfc5d284481734816d45"
+  integrity sha512-VR7HXdfvLjEDNM4Cl/QmCHf2x6BRLxxdA2jWdnUFD9U4uc9EtxKZHc8Ah0wer2MRBgJOq+9soGsuRE6kS5BHcw==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.18"
+
 typography-theme-parnassus@^0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/typography-theme-parnassus/-/typography-theme-parnassus-0.15.10.tgz#be04ec5730a1f00ecb00fcf359f83256f2762dda"
@@ -8574,6 +8604,22 @@ typography-theme-sutro@^0.15.10:
   dependencies:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
+
+typography-theme-wordpress-2015@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-theme-wordpress-2015/-/typography-theme-wordpress-2015-0.16.18.tgz#24506320702b14dcf42ccbdda6c4824fe1f455a8"
+  integrity sha512-+xRuOKFk15JTScgj89obIll/ZK6eeeoSmHMtET9YJIjFv5cmfNTFUpyOocPGCBNX0PYOkMPjh7uGbbjlUFGHWw==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.18"
+
+typography-theme-wordpress-2016@^0.16.18:
+  version "0.16.18"
+  resolved "https://registry.yarnpkg.com/typography-theme-wordpress-2016/-/typography-theme-wordpress-2016-0.16.18.tgz#bdca238ea43cabb9b590c299963c3fb8abc671af"
+  integrity sha512-ULTVAYGPtrL5C+y0YQr7eJJQ9F1dibnUSDuFKOEi8WFWmPcYGoMavtDGLEd1d+8TKMtnyi5sB9QvI7d0WAFxqA==
+  dependencies:
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.18"
 
 typography@^0.16.0, typography@^0.16.6:
   version "0.16.6"

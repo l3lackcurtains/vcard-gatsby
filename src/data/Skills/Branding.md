@@ -1,5 +1,5 @@
 ---
 title: "skills"
-name: "NodeJS"
+name: "Branding"
 amount: 70
 ---

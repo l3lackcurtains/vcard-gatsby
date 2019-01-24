@@ -1,11 +1,11 @@
 ---
 title: "about"
-name: "Madhav Poudel"
+name: "John Doe"
 role: "Full Stack Web Developer"
 age: 23
-address: "Pokhara, Nepal"
-email: "king.ov.universe@gmail.com"
+address: "United States"
+email: "callmejohn@gmail.com"
 freelance: "Available"
 cv: "#"
 ---
-Hello! I’m Madhav Poudel. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.
+Hello! I’m John Doe. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.

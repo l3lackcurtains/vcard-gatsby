@@ -1,5 +1,5 @@
 ---
 title: "skills"
-name: "Wordpress"
+name: "Mobile App"
 amount: 80
 ---

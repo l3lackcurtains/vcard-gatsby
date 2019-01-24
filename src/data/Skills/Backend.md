@@ -1,5 +1,5 @@
 ---
 title: "skills"
-name: "GraphQL"
+name: "Backend"
 amount: 70
 ---
